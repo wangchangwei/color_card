@@ -10,6 +10,7 @@ import remarkGfm from 'remark-gfm';
 interface Color {
   name: string;
   colors: string[];
+  id: number;
 }
 
 type GradientDirection = 'to right' | 'to left' | 'to bottom' | 'to top' | 'to bottom right' | 'to bottom left' | 'to top right' | 'to top left';
@@ -17,7 +18,8 @@ type GradientDirection = 'to right' | 'to left' | 'to bottom' | 'to top' | 'to b
 export default function Home() {
   const [currentGradient, setCurrentGradient] = useState<Color>({
     name: '月光湾',
-    colors: ['#0F2027', '#203A43', '#2C5364']
+    colors: ['#0F2027', '#203A43', '#2C5364'],
+    id: 1
   });
   const [fourColors, setFourColors] = useState<Color[]>([]);
   const [threeColors, setThreeColors] = useState<Color[]>([]);
@@ -243,7 +245,7 @@ export default function Home() {
                     }}
                     onClick={() => handleColorClick(color)}
                   >
-                    {color.name}
+                    {`${color.id}. ${color.name}`}
                   </button>
                 ))}
               </div>
@@ -261,7 +263,7 @@ export default function Home() {
                     }}
                     onClick={() => handleColorClick(color)}
                   >
-                    {color.name}
+                    {`${color.id}. ${color.name}`}
                   </button>
                 ))}
               </div>
@@ -279,7 +281,7 @@ export default function Home() {
                     }}
                     onClick={() => handleColorClick(color)}
                   >
-                    {color.name}
+                    {`${color.id}. ${color.name}`}
                   </button>
                 ))}
               </div>
